@@ -1,0 +1,22 @@
+logging:
+  level:
+    org.springframework.web: ERROR
+    com.stackroute: DEBUG
+    spring.data.mongodb: ERROR
+    pattern:
+      console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n"
+      file: "%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n"
+      path: logs
+      file: ${logging.path}/movie_app.log
+
+eureka:         #tells about the Eureka server details and its refresh time
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8091/eureka/
+        healthcheck:
+            enabled: true
+        lease:
+            duration: 5
+    instance:
+        leaseRenewalIntervalInSeconds: 1
+        leaseExpirationDurationInSeconds: 2
