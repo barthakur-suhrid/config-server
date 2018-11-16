@@ -4,11 +4,14 @@ eureka:         #tells about the Eureka server details and its refresh time
     leaseExpirationDurationInSeconds: 2
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:8091/eureka/
+      defaultZone: http://localhost:8091/eureka/
     healthcheck:
       enabled: true
     lease:
       duration: 5
+management:
+    security:
+        enabled: false
 
 logging:
   level:
