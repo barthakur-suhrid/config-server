@@ -2,14 +2,10 @@ management:
     security:
         enabled: false
 
-eureka:         #tells about the Eureka server details and its refresh time
-    client:
-        serviceUrl:
-            defaultZone: http://localhost:8091/eureka/
-        healthcheck:
-            enabled: true
-        lease:
-            duration: 5
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8091/eureka/
 
 logging:
   level:
