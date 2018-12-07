@@ -7,3 +7,15 @@ kafka:
   outputTopic: indexer
   listeningTopic: certificate
   containerFactory: userKafkaListenerFactory
+
+
+logging:
+  level:
+    org.springframework.web: ERROR
+    com.stackroute: DEBUG
+    spring.data.mongodb: ERROR
+  pattern:
+    console: "%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger.%M - %msg%n"
+    file: "%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n"
+  path: logs
+  file: ${logging.path}/matchmaking-platform.log
