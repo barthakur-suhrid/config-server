@@ -8,6 +8,10 @@ kafka:
   listeningTopic: certificate
   containerFactory: userKafkaListenerFactory
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8091/eureka/
 
 logging:
   level:
@@ -19,3 +23,5 @@ logging:
     file: "%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n"
   path: logs
   file: ${logging.path}/matchmaking-platform.log
+
+
